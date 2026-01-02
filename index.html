@@ -1,5 +1,4 @@
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -12,7 +11,33 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{background:#f4f6fb;color:#333;line-height:1.6}
 
+/* NAVBAR */
+.navbar{
+position:fixed;top:0;width:100%;
+background:#07043e;
+z-index:1000;
+}
+.nav-container{
+max-width:1100px;margin:auto;
+display:flex;justify-content:space-between;
+align-items:center;padding:16px 20px;
+}
+.logo{color:white;font-size:22px;font-weight:700}
+.nav-links a{
+color:#ddd;margin-left:20px;
+text-decoration:none;font-size:14px;
+transition:.3s;
+}
+.nav-links a:hover{color:#cdb4ff}
+.resume-btn{
+background:#cdb4ff;color:#1f1c2c!important;
+padding:8px 14px;border-radius:20px;
+font-weight:600;
+}
+
+/* HEADER */
 header{
+margin-top:80px;
 background:linear-gradient(120deg,#1f1c2c,#524cfa);
 color:white;padding:80px 20px;text-align:center;
 }
@@ -22,8 +47,9 @@ border:6px solid rgba(255,255,255,.8);
 object-fit:cover;margin-bottom:20px;
 }
 header h1{font-size:42px;font-weight:700}
-header p{max-width:800px;margin:15px auto;font-size:18px}
+header p{max-width:850px;margin:15px auto;font-size:18px}
 
+/* SECTIONS */
 section{max-width:1100px;margin:auto;padding:70px 20px}
 h2{text-align:center;font-size:32px;color:#1f1c2c;margin-bottom:40px}
 
@@ -36,39 +62,65 @@ transition:.3s;
 }
 .card:hover{transform:translateY(-6px)}
 
-.card h3{color:#928dab;margin-bottom:12px}
+.card h3{color:#524cfa;margin-bottom:12px}
 
 .badge{
 display:inline-block;background:#1f1c2c;color:white;
-padding:6px 14px;border-radius:20px;font-size:13px;margin:4px 4px 0 0;
+padding:6px 14px;border-radius:20px;
+font-size:13px;margin:4px 4px 0 0;
 }
 
 .timeline{border-left:4px solid #a898e7;padding-left:25px}
 .timeline li{margin-bottom:15px}
 
 footer{
-background:#049a48;color:white;text-align:center;padding:50px 20px
+background:#049a48;color:white;
+text-align:center;padding:50px 20px
 }
 footer a{color:#cdb4ff;text-decoration:none;margin:0 10px}
 footer a:hover{text-decoration:underline}
+
+html{scroll-behavior:smooth}
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+   <div class="logo">Kajal Gadekar</div>
+    <div class="nav-links">
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#achievements">Achievements</a>
+      <a href="https://github.com/kajal-16" target="_blank">GitHub</a>
+      <a href="KajalGadekarResume_2026.pdf" class="resume-btn" target="_blank">
+         Resume
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
 <header>
 <img src="profile.jpg" alt="Kajal Gadekar">
 <h1>Kajal Gadekar</h1>
 <p>
-Senior Full‑Stack Developer with 2+ years of enterprise experience in Java, Spring Boot,
-Microservices, and React. Proven expertise in scalable systems, security, CI/CD,
-and production‑grade applications in banking environments.
+Senior Full-Stack Developer with 2.5+ years of experience in enterprise banking
+applications. Strong expertise in Java, Spring Boot, Microservices, and React,
+with proven ownership of scalable APIs, security remediation, CI/CD pipelines,
+and production-grade systems at Standard Chartered Bank.
 </p>
 </header>
 
-<section>
+<!-- SKILLS -->
+<section id="skills">
 <h2>Core Skills</h2>
 <div class="grid">
+
 <div class="card">
 <h3>Backend Engineering</h3>
 <span class="badge">Java</span>
@@ -88,9 +140,10 @@ and production‑grade applications in banking environments.
 
 <div class="card">
 <h3>Cloud & DevOps</h3>
-<span class="badge">Git</span>
+<span class="badge">Azure DevOps</span>
 <span class="badge">CI/CD</span>
-<span class="badge">OCP</span>
+<span class="badge">Docker</span>
+<span class="badge">OpenShift</span>
 <span class="badge">Helm</span>
 </div>
 
@@ -102,36 +155,40 @@ and production‑grade applications in banking environments.
 <span class="badge">Aqua</span>
 <span class="badge">Nexus</span>
 </div>
+
 </div>
 </section>
 
-<section>
+<!-- EXPERIENCE -->
+<section id="experience">
 <h2>Professional Experience</h2>
 <div class="card">
-<h3>Standard Chartered Bank — Full Stack Developer</h3>
+<h3>Standard Chartered Bank — Sr. Analyst, Backend Engineer</h3>
 <ul class="timeline">
-<li>Designed and delivered centralized Drools‑based eligibility REST APIs used across multiple services</li>
-<li>Led Java 17 migration using records, improving readability and reducing boilerplate</li>
-<li>Implemented password rotation using HashiCorp Vault across 14 microservices in OCP</li>
-<li>Resolved high‑priority security vulnerabilities flagged by Sonar, Aqua, and Nexus</li>
-<li>Owned CI/CD pipelines and supported production releases with zero downtime</li>
+<li>Designed and delivered centralized Drools-based eligibility REST APIs used across multiple enterprise services</li>
+<li>Led Java 17 migration using records, reducing boilerplate and improving maintainability</li>
+<li>Implemented HashiCorp Vault password rotation across 14 microservices in production and non-prod</li>
+<li>Resolved critical security vulnerabilities identified by Sonar, Aqua, and Nexus</li>
+<li>Owned CI/CD pipelines and actively supported production releases and hotfixes</li>
 </ul>
 </div>
 </section>
 
-<section>
+<!-- PROJECTS -->
+<section id="projects">
 <h2>Key Projects</h2>
 <div class="grid">
+
 <div class="card">
 <h3>Centralized Eligibility Engine</h3>
-<p>Enterprise rule engine with Excel‑driven decision tables powering eligibility checks.</p>
+<p>Enterprise rule engine powering eligibility checks using Excel-driven decision tables.</p>
 <p><b>Tech:</b> Java, Spring Boot, Drools, PostgreSQL</p>
 </div>
 
 <div class="card">
 <h3>Indian Currency Detection App</h3>
-<p>Mobile application for visually impaired users with camera‑based detection and voice feedback.</p>
-<p><b>Tech:</b> React Native, Expo, TTS</p>
+<p>Accessibility-focused mobile app providing camera-based currency detection with voice feedback.</p>
+<p><b>Tech:</b> React Native, Expo, Text-to-Speech</p>
 </div>
 
 <div class="card">
@@ -139,25 +196,53 @@ and production‑grade applications in banking environments.
 <p>Secure REST service with validations, error handling, and database integration.</p>
 <p><b>Tech:</b> Spring Boot, REST APIs</p>
 </div>
+
 </div>
 </section>
 
+<!-- HIGHLIGHTS -->
 <section>
 <h2>Career Highlights</h2>
 <div class="grid">
-<div class="card">Handled changes across <b>14 production microservices</b></div>
-<div class="card">Only team in Bangalore executing critical password rotation initiative</div>
-<div class="card">Consistently trusted for production deployments and hotfixes</div>
+<div class="card">Handled changes across <b>14+ production microservices</b></div>
+<div class="card">Key contributor to critical security and password rotation initiatives</div>
+<div class="card">Trusted owner for production deployments and release support</div>
 </div>
 </section>
 
+<!--Acheivments-->
+
+<section id="achievements">
+  <h2>Major Achievements</h2>
+
+  <div class="grid">
+    <div class="card">
+      <h3>🥈 All India Standard Chartered Bank Hackathon 2023</h3>
+      <p>
+        Secured <b>2nd Runner-Up</b> position by delivering an innovative and scalable solution
+        under tight enterprise timelines.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>🥉 All India Code Hackathon – Capgemini & AWS</h3>
+      <p>
+        Achieved <b>3rd position</b> in a nationwide hackathon conducted by Capgemini
+        in collaboration with Link Innovations & AWS.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-<p>📧 kajalgadekar1602@gmail.com</p>
-<p>
-<a href="#">LinkedIn - https://www.linkedin.com/in/kajal-gadekar-049318231/</a> |
-<a href="#">GitHub</a>
-</p>
-<p>© 2025 Kajal Gadekar</p>
+  <p>📍 Bangalore, India</p>
+  <p>📧 <a href="mailto:kajalgadekar1602@gmail.com">kajalgadekar1602@gmail.com</a></p>
+  <p>
+    <a href="https://linkedin.com/in/kajal-gadekar-049318231" target="_blank">LinkedIn</a> |
+    <a href="https://github.com/kajal-16" target="_blank">GitHub</a>
+  </p>
+  <p>© 2025 Kajal Gadekar</p>
 </footer>
 
 </body>
